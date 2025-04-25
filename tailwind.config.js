@@ -6,6 +6,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('tailwindcss-animated')
+    require('tailwindcss-animated'),
+    require('@adam.plesnik/tailwindcss-scroll-driven-animations'),
   ],
 }

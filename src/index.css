@@ -43,7 +43,8 @@
     -webkit-font-smoothing: antialiased !important;
     text-rendering: optimizeLegibility !important;
     -moz-osx-font-smoothing: grayscale;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden !important;
   }
   
   .mod {

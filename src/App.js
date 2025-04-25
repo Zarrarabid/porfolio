@@ -9,6 +9,7 @@ const Home = lazy(() => import("./Components/Home/Home"));
 const Experience = lazy(() => import("./Components/Experience/Expereince"));
 const ContactUs = lazy(() => import("./Components/ContactUs/ContactUs"));
 const Projects = lazy(() => import("./Components/Projects/Projects"));
+const Certifications = lazy(() => import("./Components/Certification/Certification"));
 
 
 function App() {
@@ -190,6 +191,7 @@ function App() {
                 <Routes>
                   <Route path={`/`} element={<Home />} />
                   <Route path={`/projects`} element={<Projects />} />
+                  <Route path={`/certifications`} element={<Certifications />} />
                   <Route path={`/experience`} element={<Experience />} />
                   <Route path={`/contact_us`} element={<ContactUs />} />
                 </Routes>

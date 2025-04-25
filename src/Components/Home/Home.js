@@ -18,6 +18,11 @@ import VSCode from "../../Assets/Visual Studio Code (VS Code).png"
 import DatabaseIcon from "../../Assets/D3.js.png"
 import UIUXIcon from "../../Assets/Realm.png"
 import { TypeAnimation } from 'react-type-animation';
+import Tech from "../../Assets/Tech.gif"
+import WMI from "../../Assets/WMI.gif"
+import JSBUFF from "../../Assets/JSBUFF.gif"
+import STACK from "../../Assets/STACK.gif"
+
 
 function Home() {
     const [textColor, setTextColor] = useState('red');
@@ -83,13 +88,19 @@ function Home() {
         },
     ]
     return (
-        <>
+        <div
+            style={{
+                overflow: "hidden"
+            }}
+        >
+
             <section
                 style={{
                     backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
                 }}
                 className=" min-h-[100vh] h-full flex flex-col justify-center">
                 <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+
                     <div className=" mr-auto place-self-center lg:col-span-7">
                         <h1
                             className="animate-fade-down max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-black">
@@ -303,6 +314,11 @@ function Home() {
                 }}
                 className="h-full  py-20">
                 <div className="max-w-screen-xl px-4 py-8 mx-auto ">
+                    <div className='w-full flex justify-center'>
+                        <div data-aos="zoom-out-up" data-aos-duration="1000" className='h-full w-96 '>
+                            <img src={Tech} />
+                        </div>
+                    </div>
                     <h1
                         // style={{ color: textColor, }}
                         className=" text-center my-8 text-2xl font-bold text-black md:text-4xl mb-16">
@@ -332,9 +348,15 @@ function Home() {
                 }}
                 className='h-full '
             >
+                <div className='w-full flex flex-col justify-center items-center'>
+                    <div data-aos="zoom-out-up" data-aos-duration="1000" className='h-full w-96 '>
+                        <img src={JSBUFF} />
+                    </div>
+                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">You Got It! I am a Javascript Buff</h2>
+                </div>
                 <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                     <div className="font-light text-gray-800 sm:text-lg ">
-                        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">You Got It! I am a Javascript Buff</h2>
+                        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">What is Javascript</h2>
                         <p className="mb-4">JavaScript, or JS, is the dynamic force behind most websites, bringing interactivity and flair to the web. With over 97% of sites harnessing its power, it’s essential for creating engaging user experiences—from animations to responsive applications. Unleash your creativity with JS!</p>
                     </div>
                     <div className="grid grid-cols-2 gap-4 mt-8">
@@ -349,10 +371,13 @@ function Home() {
                 style={{
                     backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
                 }}
-                className='h-full py-20'
+                className='h-full pt-20 pb-32'
             >
 
                 <div className='px-4 flex flex-col justify-center items-center'>
+                    <div data-aos="zoom-out-up" data-aos-duration="3000" className=' flex justify-center h-52 w-52 '>
+                        <img src={WMI} />
+                    </div>
                     <h1
                         className=" text-center my-8 text-2xl font-bold text-black md:text-4xl mb-16">
                         🕵️‍♂️ Who is Zarrar Abid?
@@ -395,6 +420,11 @@ function Home() {
                 }}
                 className="text-black bg-white">
                 <div className="max-w-6xl mx-auto px-5 py-24 ">
+                    <div className='w-full flex justify-center mb-10'>
+                        <div data-aos="zoom-out-up" data-aos-duration="1000" className='h-full w-96 '>
+                            <img src={STACK} />
+                        </div>
+                    </div>
                     <div className="text-center mb-20">
                         <h1 className=" title-font  mb-4 text-2xl md:text-4xl font-extrabold leading-10 tracking-tight sm:text-5xl sm:leading-none ">
                             💻 A Glimpse into My Toolkit
@@ -407,13 +437,12 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 ">
-                        <div className="p-10 pl-5 md:w-1/3 md:mb-0 mb-6 flex flex-col ">
+                    <div className="flex flex-wrap flex-col lg:flex-row align-middle sm:-m-4 -mx-4 -mb-10 -mt-4 ">
+                        <div className="p-10 pl-5 w-full lg:w-1/3 md:mb-0 mb-6 flex flex-col ">
                             <div data-aos="zoom-in-up" className="pattern-dots-md gray-light">
                                 <Tilt>
                                     <div
-
-                                        className=" min-h-[365px] rounded translate-x-6 -translate-y-6 flex w-full flex-col items-start justify-between border-4 border-black bg-gradient-to-b from-white via-gray-100 to-gray-200 p-6 transform hover:bg-gradient-to-b hover:from-gray-200 hover:to-white shadow-[8px_8px_0_0_#000] transition-shadow duration-500 ease-in-out hover:shadow-[12px_12px_0_0_#000]"
+                                        className="min-w-[246px] min-h-[365px] rounded translate-x-6 -translate-y-6 flex w-full flex-col items-start justify-between border-4 border-black bg-gradient-to-b from-white via-gray-100 to-gray-200 p-6 transform hover:bg-gradient-to-b hover:from-gray-200 hover:to-white shadow-[8px_8px_0_0_#000] transition-shadow duration-500 ease-in-out hover:shadow-[12px_12px_0_0_#000]"
                                     >
                                         <div className="group relative">
                                             <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-2 flex-shrink-0 p-2">
@@ -446,11 +475,11 @@ function Home() {
 
                             </div>
                         </div>
-                        <div className="p-10 pl-5 md:w-1/3 md:mb-0 mb-6 flex flex-col ">
+                        <div className="p-10 pl-5 w-full lg:w-1/3 md:mb-0 mb-6 flex flex-col ">
                             <div data-aos="zoom-in-up" className="pattern-dots-md gray-light">
                                 <Tilt>
                                     <div
-                                        className=" min-h-[365px] rounded translate-x-6 -translate-y-6 flex w-full flex-col items-start justify-between border-4 border-black bg-gradient-to-b from-white via-gray-100 to-gray-200 p-6 transform hover:bg-gradient-to-b hover:from-gray-200 hover:to-white shadow-[8px_8px_0_0_#000] transition-shadow duration-500 ease-in-out hover:shadow-[12px_12px_0_0_#000]"
+                                        className="min-w-[246px] min-h-[365px] rounded translate-x-6 -translate-y-6 flex w-full flex-col items-start justify-between border-4 border-black bg-gradient-to-b from-white via-gray-100 to-gray-200 p-6 transform hover:bg-gradient-to-b hover:from-gray-200 hover:to-white shadow-[8px_8px_0_0_#000] transition-shadow duration-500 ease-in-out hover:shadow-[12px_12px_0_0_#000]"
                                     >
                                         <div className="group relative">
                                             <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-2 flex-shrink-0 p-2">
@@ -483,11 +512,11 @@ function Home() {
 
                             </div>
                         </div>
-                        <div className="p-10 pl-5 md:w-1/3 md:mb-0 mb-6 flex flex-col ">
+                        <div className="p-10 pl-5 w-full lg:w-1/3 md:mb-0 mb-6 flex flex-col ">
                             <div data-aos="zoom-in-up" className="pattern-dots-lg gray-light">
                                 <Tilt>
                                     <div
-                                        className=" min-h-[365px] rounded translate-x-6 -translate-y-6 flex w-full flex-col items-start justify-between border-4 border-black bg-gradient-to-b from-white via-gray-100 to-gray-200 p-6 transform hover:bg-gradient-to-b hover:from-gray-200 hover:to-white shadow-[8px_8px_0_0_#000] transition-shadow duration-500 ease-in-out hover:shadow-[12px_12px_0_0_#000]"
+                                        className="min-w-[246px] min-h-[365px] rounded translate-x-6 -translate-y-6 flex w-full flex-col items-start justify-between border-4 border-black bg-gradient-to-b from-white via-gray-100 to-gray-200 p-6 transform hover:bg-gradient-to-b hover:from-gray-200 hover:to-white shadow-[8px_8px_0_0_#000] transition-shadow duration-500 ease-in-out hover:shadow-[12px_12px_0_0_#000]"
                                     >
                                         <div className="group relative">
                                             <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-2 flex-shrink-0 p-2">
@@ -524,7 +553,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     )
 }
 
