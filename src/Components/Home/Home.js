@@ -137,53 +137,55 @@ function Home() {
                             />
                         </h1>
                         <p className="animate-fade-right animate-duration-[1000ms] max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-800">I am dedicated to crafting exceptional user experiences by leveraging the latest cutting-edge technologies. My focus is on building robust, secure, and accessible websites that are not only interactive but also enjoyable to use. With a strong grasp of back-end technologies, I seamlessly integrate them into my workflow, ensuring a cohesive and efficient development process. My meticulous attention to detail guarantees that every product I deliver aligns perfectly with the design vision, creating a delightful experience for users.</p>
-                        <a
-                            href="../../Copy of Zarrar Hussain Abid.pdf"
-                            download="Resume"
-                            className="animate-flip-up mb-3 relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase text-black rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline-offset-4 overflow-hidden"
-                        >
-                            <span className="relative z-20 uppercase">Download Resume</span>
+                        <div className='flex flex-col items-center sm:flex-row'>
+                            <a
+                                href="../../Assets/Copy of Zarrar Hussain Abid.pdf"
+                                download="Resume"
+                                className="animate-flip-up mb-3 relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase text-black rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline-offset-4 overflow-hidden"
+                            >
+                                <span className="relative z-20 uppercase">Download Resume</span>
 
-                            <span
-                                className="absolute left-[-75%] top-0 h-full w-[50%] bg-[#00FF9C]/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"
-                            ></span>
+                                <span
+                                    className="absolute left-[-75%] top-0 h-full w-[50%] bg-[#00FF9C]/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"
+                                ></span>
 
-                            <span
-                                className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[20%] rounded-tl-lg border-l-2 border-t-2 top-0 left-0"
-                            ></span>
-                            <span
-                                className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute group-hover:h-[90%] h-[60%] rounded-tr-lg border-r-2 border-t-2 top-0 right-0"
-                            ></span>
-                            <span
-                                className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[60%] group-hover:h-[90%] rounded-bl-lg border-l-2 border-b-2 left-0 bottom-0"
-                            ></span>
-                            <span
-                                className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[20%] rounded-br-lg border-r-2 border-b-2 right-0 bottom-0"
-                            ></span>
-                        </a>
+                                <span
+                                    className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[20%] rounded-tl-lg border-l-2 border-t-2 top-0 left-0"
+                                ></span>
+                                <span
+                                    className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute group-hover:h-[90%] h-[60%] rounded-tr-lg border-r-2 border-t-2 top-0 right-0"
+                                ></span>
+                                <span
+                                    className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[60%] group-hover:h-[90%] rounded-bl-lg border-l-2 border-b-2 left-0 bottom-0"
+                                ></span>
+                                <span
+                                    className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[20%] rounded-br-lg border-r-2 border-b-2 right-0 bottom-0"
+                                ></span>
+                            </a>
 
-                        <a
-                            className="animate-flip-up font-s relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase text-black rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline focus:outline-2 focus:outline-white focus:outline-offset-4 overflow-hidden"
-                        >
-                            <span className="relative z-20 uppercase">Send Me a message</span>
+                            <a
+                                className="mb-3 animate-flip-up font-s relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase text-black rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline focus:outline-2 focus:outline-white focus:outline-offset-4 overflow-hidden"
+                            >
+                                <span className="relative z-20 uppercase">Send Me a message</span>
 
-                            <span
-                                className="absolute left-[-75%] top-0 h-full w-[50%] bg-[#00FF9C]/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"
-                            ></span>
+                                <span
+                                    className="absolute left-[-75%] top-0 h-full w-[50%] bg-[#00FF9C]/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"
+                                ></span>
 
-                            <span
-                                className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[20%] rounded-tl-lg border-l-2 border-t-2 top-0 left-0"
-                            ></span>
-                            <span
-                                className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute group-hover:h-[90%] h-[60%] rounded-tr-lg border-r-2 border-t-2 top-0 right-0"
-                            ></span>
-                            <span
-                                className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[60%] group-hover:h-[90%] rounded-bl-lg border-l-2 border-b-2 left-0 bottom-0"
-                            ></span>
-                            <span
-                                className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[20%] rounded-br-lg border-r-2 border-b-2 right-0 bottom-0"
-                            ></span>
-                        </a>
+                                <span
+                                    className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[20%] rounded-tl-lg border-l-2 border-t-2 top-0 left-0"
+                                ></span>
+                                <span
+                                    className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute group-hover:h-[90%] h-[60%] rounded-tr-lg border-r-2 border-t-2 top-0 right-0"
+                                ></span>
+                                <span
+                                    className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[60%] group-hover:h-[90%] rounded-bl-lg border-l-2 border-b-2 left-0 bottom-0"
+                                ></span>
+                                <span
+                                    className="w-1/2 drop-shadow-3xl transition-all duration-300 block border-[#3674B5] absolute h-[20%] rounded-br-lg border-r-2 border-b-2 right-0 bottom-0"
+                                ></span>
+                            </a>
+                        </div>
                     </div>
                     <div className="animate-fade-left animate-duration-[1000ms] lg:mt-20 mb-20 lg:col-span-5 flex justify-center order-first lg:order-last ">
                         <Tilt >
@@ -346,17 +348,17 @@ function Home() {
                 style={{
                     backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
                 }}
-                className='h-full '
+                className='h-full'
             >
-                <div className='w-full flex flex-col justify-center items-center'>
-                    <div data-aos="zoom-out-up" data-aos-duration="1000" className='h-full w-96 '>
+                <div className='px-3 w-full flex flex-col justify-center items-center'>
+                    <div data-aos="zoom-out-up" data-aos-duration="1000" className='h-full w-80 sm:w-96 '>
                         <img src={JSBUFF} />
                     </div>
-                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">You Got It! I am a Javascript Buff</h2>
+                    <h2 className="mb-4 text-4xl text-center tracking-tight font-extrabold text-black">You Got It! I am a Javascript Buff</h2>
                 </div>
                 <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                     <div className="font-light text-gray-800 sm:text-lg ">
-                        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black">What is Javascript</h2>
+                        <h2 className="mb-4 text-center lg:text-left text-4xl tracking-tight font-extrabold text-black">What is Javascript</h2>
                         <p className="mb-4">JavaScript, or JS, is the dynamic force behind most websites, bringing interactivity and flair to the web. With over 97% of sites harnessing its power, it’s essential for creating engaging user experiences—from animations to responsive applications. Unleash your creativity with JS!</p>
                     </div>
                     <div className="grid grid-cols-2 gap-4 mt-8">
