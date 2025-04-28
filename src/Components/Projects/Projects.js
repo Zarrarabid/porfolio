@@ -1,7 +1,9 @@
 import React from 'react'
 import gifImage from "../../Assets/PROJECTS.gif"
+import { useTranslation } from 'react-i18next';
 
 function Projects() {
+    const { t } = useTranslation();
     const projectsArr = [
         {
             coverImg: "https://i.pinimg.com/736x/e4/16/4d/e4164dc76ed75a89a2ece0bea0ca1cec.jpg",
@@ -54,16 +56,16 @@ function Projects() {
                 </div>
                 <h1
                     className="animate-flip-up animate-duration-1000 text-center mt-3 mb-3 text-2xl font-bold text-black md:text-4xl ">
-                    Projects
+                    {t("Projects")}
                 </h1>
                 <p
                     className=" text-center ">
-                    Brilliant ideas need a spark! Fueled by bold moves and relentless grit. Why? Because...
+                    {t("Brilliant ideas need a spark! Fueled by bold moves and relentless grit. Why? Because...")}
                 </p>
                 <p
                     className=" text-center mb-10">
-                    "THE SECRET TO SUCCESS IS... <br></br>
-                    UNSTOPPABLE CONSISTENCY!"
+                    "{t("THE SECRET TO SUCCESS IS...")}<br></br>
+                    {t("UNSTOPPABLE CONSISTENCY!")}"
                 </p>
 
                 <section
@@ -92,7 +94,7 @@ function Projects() {
                                     <h3 className="mt-4 text-xl font-medium sm:text-2xl">{item?.name}</h3>
 
                                     <p className="mt-4 text-sm sm:text-base">
-                                        {item?.des}
+                                        {t(item?.des)}
                                     </p>
 
                                     <div className="mt-3 font-bold flex ">

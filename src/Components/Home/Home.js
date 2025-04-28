@@ -22,9 +22,11 @@ import Tech from "../../Assets/Tech.gif"
 import WMI from "../../Assets/WMI.gif"
 import JSBUFF from "../../Assets/JSBUFF.gif"
 import STACK from "../../Assets/STACK.gif"
+import { useTranslation } from 'react-i18next'
 
 
 function Home() {
+    const { t } = useTranslation();
     const [textColor, setTextColor] = useState('red');
     const icons = [
         { src: HtmlIcon, alt: "HTML icon", animation: "animate-bounce" },
@@ -104,13 +106,12 @@ function Home() {
                     <div className=" mr-auto place-self-center lg:col-span-7">
                         <h1
                             className="animate-fade-down max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-black">
-                            Hello,
+                            {t("Hello")},
                         </h1>
                         <h1
-                            style={{ color: textColor, }}
-                            className="animate-fade-down max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-                            {/* Payments tool for software companies */}
-                            <TypeAnimation
+                            style={{ color: textColor }}
+                            className="animate-fade-down h-[60px] lg:h-[100px] max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+                            {/* <TypeAnimation
                                 preRenderFirstString={true}
                                 sequence={[
                                     'I am',
@@ -134,16 +135,41 @@ function Home() {
                                 speed={40}
                                 style={{ fontSize: '1em' }}
                                 repeat={Infinity}
+                            /> */}
+                            <TypeAnimation
+                                preRenderFirstString={true}
+                                sequence={[
+                                    t("I am"),
+                                    1000,
+                                    t("I am Zarrar Abid"), // Call t directly for translation
+                                    1000,
+                                    () => setTextColor('#FF6363'),
+                                    t("I am a Developer"), // Call t directly
+                                    1000,
+                                    () => setTextColor('#FF6363'),
+                                    t("I am an Engineer"), // Call t directly
+                                    1000,
+                                    () => setTextColor('#9FB3DF'),
+                                    t("I am a Programmer"), // Call t directly
+                                    1000,
+                                    () => setTextColor('#3674B5'),
+                                    t("I am an avid learner"), // Call t directly
+                                    1000,
+                                    () => setTextColor('#727D73'),
+                                ]}
+                                speed={40}
+                                style={{ fontSize: '1em' }}
+                                repeat={Infinity}
                             />
                         </h1>
-                        <p className="animate-fade-right animate-duration-[1000ms] max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-800">I am dedicated to crafting exceptional user experiences by leveraging the latest cutting-edge technologies. My focus is on building robust, secure, and accessible websites that are not only interactive but also enjoyable to use. With a strong grasp of back-end technologies, I seamlessly integrate them into my workflow, ensuring a cohesive and efficient development process. My meticulous attention to detail guarantees that every product I deliver aligns perfectly with the design vision, creating a delightful experience for users.</p>
+                        <p className="animate-fade-right animate-duration-[1000ms] max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-800">{t("I am dedicated to crafting exceptional user experiences by leveraging the latest cutting-edge technologies. My focus is on building robust, secure, and accessible websites that are not only interactive but also enjoyable to use. With a strong grasp of back-end technologies, I seamlessly integrate them into my workflow, ensuring a cohesive and efficient development process. My meticulous attention to detail guarantees that every product I deliver aligns perfectly with the design vision, creating a delightful experience for users.")}</p>
                         <div className='flex flex-col items-center sm:flex-row'>
                             <a
                                 href="../../Assets/Copy of Zarrar Hussain Abid.pdf"
                                 download="Resume"
                                 className="animate-flip-up mb-3 relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase text-black rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline-offset-4 overflow-hidden"
                             >
-                                <span className="relative z-20 uppercase">Download Resume</span>
+                                <span className="relative z-20 uppercase">{t("Download Resume")}</span>
 
                                 <span
                                     className="absolute left-[-75%] top-0 h-full w-[50%] bg-[#00FF9C]/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"
@@ -166,7 +192,7 @@ function Home() {
                             <a
                                 className="mb-3 animate-flip-up font-s relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase text-black rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline focus:outline-2 focus:outline-white focus:outline-offset-4 overflow-hidden"
                             >
-                                <span className="relative z-20 uppercase">Send Me a message</span>
+                                <span className="relative z-20 uppercase">{t("Send Me a message")}</span>
 
                                 <span
                                     className="absolute left-[-75%] top-0 h-full w-[50%] bg-[#00FF9C]/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"
@@ -324,7 +350,7 @@ function Home() {
                     <h1
                         // style={{ color: textColor, }}
                         className=" text-center my-8 text-2xl font-bold text-black md:text-4xl mb-16">
-                        🌟 Technologies I Use
+                        🌟 {t("Technologies I Use")}
                     </h1>
                     <div className='flex flex-wrap gap-20 justify-center'>
                         {icons.map((icon, index) => (
@@ -354,12 +380,12 @@ function Home() {
                     <div data-aos="zoom-out-up" data-aos-duration="1000" className='h-full w-80 sm:w-96 '>
                         <img src={JSBUFF} />
                     </div>
-                    <h2 className="mb-4 text-4xl text-center tracking-tight font-extrabold text-black">You Got It! I am a Javascript Buff</h2>
+                    <h2 className="mb-4 text-4xl text-center tracking-tight font-extrabold text-black">{t("You Got It! I am a Javascript Buff")}</h2>
                 </div>
                 <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                     <div className="font-light text-gray-800 sm:text-lg ">
-                        <h2 className="mb-4 text-center lg:text-left text-4xl tracking-tight font-extrabold text-black">What is Javascript</h2>
-                        <p className="mb-4">JavaScript, or JS, is the dynamic force behind most websites, bringing interactivity and flair to the web. With over 97% of sites harnessing its power, it’s essential for creating engaging user experiences—from animations to responsive applications. Unleash your creativity with JS!</p>
+                        <h2 className="mb-4 text-center lg:text-left text-4xl tracking-tight font-extrabold text-black">{t("What is Javascript")}</h2>
+                        <p className="mb-4">{t("JavaScript, or JS, is the dynamic force behind most websites, bringing interactivity and flair to the web. With over 97% of sites harnessing its power, it’s essential for creating engaging user experiences—from animations to responsive applications. Unleash your creativity with JS!")}</p>
                     </div>
                     <div className="grid grid-cols-2 gap-4 mt-8">
                         <img data-aos="fade-up" className="w-full rounded-lg" src="https://images.unsplash.com/photo-1732017968601-f46d9badf229?q=80&w=1937&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="office content 1" />
@@ -382,7 +408,7 @@ function Home() {
                     </div>
                     <h1
                         className=" text-center my-8 text-2xl font-bold text-black md:text-4xl mb-16">
-                        🕵️‍♂️ Who is Zarrar Abid?
+                        🕵️‍♂️ {t("Who is Zarrar Abid?")}
                     </h1>
                     <Tilt>
                         <div
@@ -394,7 +420,7 @@ function Home() {
                                     className="group-hover:text-red-500 mt-3 text-2xl font-black uppercase leading-6 text-black transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blue-800"
                                 >
                                     <a href="#"
-                                    ><span className="absolute inset-0 max-w-xs"></span>Hi, Hello, Assalam U Alaikum...</a>
+                                    ><span className="absolute inset-0 max-w-xs"></span>{t("Hi, Hello, Assalam U Alaikum...")}</a>
                                 </h3>
                                 <div
                                     className="text-md mt-5 border-l-4 border-red-500 pl-4 leading-6 text-gray-700 transition-all duration-500 ease-in-out transform hover:border-blue-500 hover:text-gray-600"
@@ -429,10 +455,10 @@ function Home() {
                     </div>
                     <div className="text-center mb-20">
                         <h1 className=" title-font  mb-4 text-2xl md:text-4xl font-extrabold leading-10 tracking-tight sm:text-5xl sm:leading-none ">
-                            💻 A Glimpse into My Toolkit
+                            💻 {t("A Glimpse into My Toolkit")}
                         </h1>
                         <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-                            In this section, I’ll share the powerful tools and technologies that fuel my development journey. From frameworks to databases, each component is carefully chosen to enhance productivity and creativity. Get ready to explore the building blocks of my projects!
+                            {t("In this section, I’ll share the powerful tools and technologies that fuel my development journey. From frameworks to databases, each component is carefully chosen to enhance productivity and creativity. Get ready to explore the building blocks of my projects!")}
                         </p>
                         <div className="flex mt-6 justify-center">
                             <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex">

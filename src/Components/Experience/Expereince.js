@@ -1,8 +1,11 @@
 import React from 'react'
 import { Tilt } from '@jdion/tilt-react'
 import gifImage from "../../Assets/Animation - 1745488964416.gif"
+import { useTranslation } from 'react-i18next';
 
 function Expereince() {
+    const { t } = useTranslation();
+
     return (
         <div
             style={{
@@ -15,18 +18,16 @@ function Expereince() {
                 </div>
                 <h1
                     className="animate-flip-up animate-duration-1000 text-center mt-8 mb-3 text-2xl font-bold text-black md:text-4xl ">
-                    Work History
+                    {t("Work History")}
                 </h1>
                 <p
                     // style={{ color: textColor, }}
                     className=" text-center ">
-                    In the school of life, practical work is the ultimate curriculum.
+                    {t("In the school of life, practical work is the ultimate curriculum.")}
                 </p>
                 <div className="w-full max-w-screen-xl px-4 py-8 mx-auto md:px-6 ">
                     <div className="flex flex-col justify-center divide-y divide-slate-200 [&>*]:py-16">
-
                         <div className="w-full">
-
                             <div className="hidden sm:block space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
 
                                 <div data-aos="zoom-out-left" className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
@@ -54,8 +55,8 @@ function Expereince() {
                                                                     <time className="font-caveat font-medium text-indigo-500">SEP-2023 - PRESENT</time>
                                                                 </div>
                                                                 <div className="text-slate-500">
-                                                                    ♦ Developed and maintained advanced ReactJS applications tailored for various industries, particularly focusing on the finance sector.<br></br>
-                                                                    ♦ Managed application state using Redux for robust state handling.</div>
+                                                                    ♦ {t("Developed and maintained advanced ReactJS applications tailored for various industries, particularly focusing on the finance sector.")}<br></br>
+                                                                    ♦ {t("Managed application state using Redux for robust state handling.")}</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -92,8 +93,8 @@ function Expereince() {
                                                                     <time className="font-caveat font-medium text-indigo-500">SEP-2021 - OCT-2021</time>
                                                                 </div>
                                                                 <div className="text-slate-500">
-                                                                    ♦ Led the maintenance of the front-end interface to ensure peak performance.<br></br>
-                                                                    ♦ Managed supplier relationships to secure cutting-edge technologies, keeping a competitive advantage in web development.</div>
+                                                                    ♦ {t("Led the maintenance of the front-end interface to ensure peak performance.")}<br></br>
+                                                                    ♦ {t("Managed supplier relationships to secure cutting-edge technologies, keeping a competitive advantage in web development.")}</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -129,8 +130,8 @@ function Expereince() {
                                                                     <time className="font-caveat font-medium text-indigo-500">OCT-2019 - Present</time>
                                                                 </div>
                                                                 <div className="text-slate-500">
-                                                                    ♦ Created cutting-edge design solutions for a variety of client projects, boosting brand visibility and engagement.<br></br>
-                                                                    ♦ Proficient in Adobe Creative Suite (Photoshop, Illustrator) design software, guaranteeing timely delivery of high-quality results.</div>
+                                                                    ♦ {t("Created cutting-edge design solutions for a variety of client projects, boosting brand visibility and engagement.")}<br></br>
+                                                                    ♦ {t("Proficient in Adobe Creative Suite (Photoshop, Illustrator) design software, guaranteeing timely delivery of high-quality results.")}</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -142,11 +143,7 @@ function Expereince() {
 
 
                             </div>
-
-
-
                         </div>
-
                     </div>
                 </div>
 
@@ -171,8 +168,8 @@ function Expereince() {
                                             <time className="font-caveat font-medium text-indigo-500">SEP-2023 - PRESENT</time>
                                         </div>
                                         <div className="text-slate-500">
-                                            ♦ Developed and maintained advanced ReactJS applications tailored for various industries, particularly focusing on the finance sector.<br></br>
-                                            ♦ Managed application state using Redux for robust state handling.</div>
+                                            ♦ {t("Developed and maintained advanced ReactJS applications tailored for various industries, particularly focusing on the finance sector.")}<br></br>
+                                            ♦ {t("Managed application state using Redux for robust state handling.")}</div>
                                     </div>
                                 </div>
                             </div>
@@ -199,8 +196,8 @@ function Expereince() {
                                             <time className="font-caveat font-medium text-indigo-500">SEP-2021 - OCT-2021</time>
                                         </div>
                                         <div className="text-slate-500">
-                                            ♦ Led the maintenance of the front-end interface to ensure peak performance.<br></br>
-                                            ♦ Managed supplier relationships to secure cutting-edge technologies, keeping a competitive advantage in web development.</div>
+                                            ♦ {t("Led the maintenance of the front-end interface to ensure peak performance.")}<br></br>
+                                            ♦ {t("Managed supplier relationships to secure cutting-edge technologies, keeping a competitive advantage in web development.")}</div>
                                     </div>
                                 </div>
                             </div>
@@ -227,8 +224,8 @@ function Expereince() {
                                             <time className="font-caveat font-medium text-indigo-500">OCT-2019 - Present</time>
                                         </div>
                                         <div className="text-slate-500">
-                                            ♦ Created cutting-edge design solutions for a variety of client projects, boosting brand visibility and engagement.<br></br>
-                                            ♦ Proficient in Adobe Creative Suite (Photoshop, Illustrator) design software, guaranteeing timely delivery of high-quality results.</div>
+                                            ♦ {t("Created cutting-edge design solutions for a variety of client projects, boosting brand visibility and engagement.")}<br></br>
+                                            ♦ {t("Proficient in Adobe Creative Suite (Photoshop, Illustrator) design software, guaranteeing timely delivery of high-quality results.")}</div>
                                     </div>
                                 </div>
                             </div>

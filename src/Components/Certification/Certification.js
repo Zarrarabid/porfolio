@@ -1,7 +1,9 @@
 import React from 'react'
 import gifImage from "../../Assets/Cert.gif"
+import { useTranslation } from 'react-i18next';
 
 function Certification() {
+    const { t } = useTranslation();
     const experienceArr = [
         {
             coverImg: "https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.udemy.android.jpg",
@@ -44,11 +46,11 @@ function Certification() {
                 </div>
                 <h1
                     className="animate-flip-up animate-duration-1000 text-center mt-3 mb-3 text-2xl font-bold text-black md:text-4xl ">
-                    Certifications
+                    {t("Certifications")}
                 </h1>
                 <p
                     className=" text-center ">
-                    Level up your skills and unleash your potential! Each certification is a badge of honor on your journey to greatness
+                    {t("Level up your skills and unleash your potential! Each certification is a badge of honor on your journey to greatness")}
                 </p>
                 <section
                     className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">

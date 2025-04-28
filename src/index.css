@@ -24,6 +24,33 @@
    background-color: #9FB3DF;
    /* border: 2px solid #c8d6f3; */
  }
+
+ /* --------- navbar Styling --------- */
+ .header-links li span {
+  position: relative;
+  z-index: 0;
+}
+
+.header-links li span::before {
+  transition: background-color 0.8s ease; 
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: 2px;
+  left: -4px;
+  right: -4px;
+  display: block;
+  height: 6px;
+}
+
+.header-links li.active span::before {
+  background-color: #FF6363;
+}
+
+.header-links li:not(.active):hover span::before {
+  background-color: #C4D9FF;
+}
+ /* --------- navbar Styling --------- */
  
 
 /* ----- bg styling start ------- */
