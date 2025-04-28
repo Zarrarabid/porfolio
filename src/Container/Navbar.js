@@ -8,9 +8,10 @@ function Navbar() {
     pathname
   } = useLocation()
   const { t, i18n } = useTranslation();
-  const languageIs = sessionStorage?.getItem("userLanguage") || "en"
+  const [languageIs, setLanguageIs] = useState(sessionStorage?.getItem("userLanguage") || "en")
   const changeLanguage = (lng) => {
     sessionStorage.setItem("userLanguage", lng)
+    setLanguageIs(lng)
     i18n.changeLanguage(lng);
     window.location.reload();
   };
@@ -131,7 +132,7 @@ function Navbar() {
               }}
               key={index}
               type="button"
-              className="p-2.5 bg-[#FF8282] rounded-full me-4 focus:outline-none focus:ring-4 focus:ring-[#FF6363] ">
+              className={`p-2.5 bg-[#FF8282] rounded-full me-4 ${selectedMenu == menu?.name ? "focus:outline-none focus:ring-4 focus:ring-[#FF6363]" : ""}`}>
               {menu?.icon}
             </button>
           ))}
@@ -163,12 +164,12 @@ function Navbar() {
                   <button
                     onClick={() => changeLanguage("jp")}
                     data-tooltip-target="tooltip-information" type="button" className="cursor-pointer p-2.5 pl-0 group rounded-full">
-                    <img className={`w-8 h-9 opacity-${languageIs == "jp" ? "100" : "45"}`} src='https://cdn-icons-png.flaticon.com/128/317/317215.png' />
+                    <img className={`w-8 h-9 ${languageIs == "jp" ? "opacity-100" : "opacity-45"}`} src='https://cdn-icons-png.flaticon.com/128/317/317215.png' />
                   </button>
                   <button
                     onClick={() => changeLanguage("en")}
                     data-tooltip-target="tooltip-information" type="button" className="cursor-pointer p-2.5 group rounded-full">
-                    <img className={`w-8 h-8 opacity-${languageIs == "en" ? "100" : "45"}`} src='https://cdn-icons-png.flaticon.com/128/555/555417.png' />
+                    <img className={`w-8 h-8 ${languageIs == "en" ? "opacity-100" : "opacity-45"}`} src='https://cdn-icons-png.flaticon.com/128/555/555417.png' />
                   </button>
                   <label className="relative inline-flex items-center cursor-pointer ">
                     <input
@@ -193,12 +194,12 @@ function Navbar() {
           <button
             onClick={() => changeLanguage("jp")}
             data-tooltip-target="tooltip-information" type="button" className="cursor-pointer p-2.5 pr-0 group rounded-full">
-            <img className={`w-8 h-9 opacity-${languageIs == "jp" ? "100" : "45"}`} src='https://cdn-icons-png.flaticon.com/128/317/317215.png' />
+            <img className={`w-8 h-9 ${languageIs == "jp" ? "opacity-100" : "opacity-45"}`} src='https://cdn-icons-png.flaticon.com/128/317/317215.png' />
           </button>
           <button
             onClick={() => changeLanguage("en")}
             data-tooltip-target="tooltip-information" type="button" className="cursor-pointer p-2.5 group rounded-full">
-            <img className={`w-8 h-8 opacity-${languageIs == "en" ? "100" : "45"}`} src='https://cdn-icons-png.flaticon.com/128/555/555417.png' />
+            <img className={`w-8 h-8 ${languageIs == "en" ? "opacity-100" : "opacity-45"}`} src='https://cdn-icons-png.flaticon.com/128/555/555417.png' />
           </button>
           <label className="relative inline-flex items-center cursor-pointer">
             <input
