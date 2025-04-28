@@ -141,19 +141,19 @@ function Home() {
                                 sequence={[
                                     t("I am"),
                                     1000,
-                                    t("I am Zarrar Abid"), // Call t directly for translation
+                                    t("I am Zarrar Abid"),
                                     1000,
                                     () => setTextColor('#FF6363'),
-                                    t("I am a Developer"), // Call t directly
+                                    t("I am a Developer"),
                                     1000,
                                     () => setTextColor('#FF6363'),
-                                    t("I am an Engineer"), // Call t directly
+                                    t("I am an Engineer"),
                                     1000,
                                     () => setTextColor('#9FB3DF'),
-                                    t("I am a Programmer"), // Call t directly
+                                    t("I am a Programmer"),
                                     1000,
                                     () => setTextColor('#3674B5'),
-                                    t("I am an avid learner"), // Call t directly
+                                    t("I am an avid learner"),
                                     1000,
                                     () => setTextColor('#727D73'),
                                 ]}
@@ -165,8 +165,9 @@ function Home() {
                         <p className="animate-fade-right animate-duration-[1000ms] max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-800">{t("I am dedicated to crafting exceptional user experiences by leveraging the latest cutting-edge technologies. My focus is on building robust, secure, and accessible websites that are not only interactive but also enjoyable to use. With a strong grasp of back-end technologies, I seamlessly integrate them into my workflow, ensuring a cohesive and efficient development process. My meticulous attention to detail guarantees that every product I deliver aligns perfectly with the design vision, creating a delightful experience for users.")}</p>
                         <div className='flex flex-col items-center sm:flex-row'>
                             <a
-                                href="../../Assets/Copy of Zarrar Hussain Abid.pdf"
-                                download="Resume"
+                                href="https://zarrarresume.tiiny.site/"
+                                target='blank'
+                                download="Zarrar Resume"
                                 className="animate-flip-up mb-3 relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase text-black rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline-offset-4 overflow-hidden"
                             >
                                 <span className="relative z-20 uppercase">{t("Download Resume")}</span>
