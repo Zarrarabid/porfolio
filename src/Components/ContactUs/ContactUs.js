@@ -26,7 +26,7 @@ function ContactUs() {
                     <div className="absolute -top-2 -left-2 -right-2 -bottom-2 rounded-lg bg-gradient-to-r from-gray-500 via-blue-600 to-black shadow-lg animate-pulse"></div>
                     <div className="relative bg-white p-10 rounded-lg shadow-lg">
                         <div className="flex flex-wrap justify-center gap-5 items-center w-full max-md:max-w-full mb-10">
-                            <div className="text-2xl font-bold text-gray-800">Contact Us</div>
+                            <div className="text-2xl font-bold text-gray-800">Contact Me</div>
                         </div>
 
                         <div className="grid grid-cols-2 gap-6 mb-6">
