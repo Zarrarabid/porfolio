@@ -1,12 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
+import MyContext from "./Context";
 
 
-function Navbar() {
+function Navbar({ setContactpath }) {
   const {
     pathname
   } = useLocation()
+  const {
+    setToggle,
+    isToggled
+  } = useContext(MyContext);
   const { t, i18n } = useTranslation();
   const [languageIs, setLanguageIs] = useState(sessionStorage?.getItem("userLanguage") || "en")
   const changeLanguage = (lng) => {
@@ -32,24 +37,16 @@ function Navbar() {
     else if (pathname?.includes("certifications")) {
       setSelectedMenu("Certifications")
     }
-    else if (pathname?.includes("contact_us")) {
-      setSelectedMenu("Contact Us")
+    else if (pathname?.includes("contact_me")) {
+      setSelectedMenu("Contact Me")
     }
     else {
       setSelectedMenu("Home")
     }
+
   }, [])
 
 
-  const [isToggled, setToggle] = useState(false)
-
-  useEffect(() => {
-    if (isToggled) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [isToggled])
 
 
   const dropdownRef = useRef(null);
@@ -99,9 +96,23 @@ function Navbar() {
     },
   ]
 
+
+  // const toggletheme = (themeIs) => {
+  //   if (themeIs) {
+  //     document.querySelector(".bgSection").classList.add('light')
+  //   }
+  //   else {
+  //     document.querySelector(".bgSection").classList.remove('dark')
+  //   }
+  // }
+
   return (
     <>
-      <div className=" fixed top-0 left-0 z-50 grid w-full h-16 grid-cols-1 px-8 bg-white border-t border-gray-200 md:grid-cols-2 shadow dark:bg-white dark:border-black backdrop-filter backdrop-blur-sm bg-opacity-10">
+      <div
+        style={{
+          border: "none",
+        }}
+        className={` fixed top-0 left-0 z-50 grid w-full h-16 grid-cols-1 px-8 ${isToggled ? "bg-[#1A1A2E] shadow-white/15" : "bg-white"} border-t border-gray-200 md:grid-cols-2 shadow backdrop-filter backdrop-blur-sm bg-opacity-10"`}>
         <div className="items-center justify-center hidden text-gray-500 dark:text-gray-400 me-auto md:flex">
           <nav className="header-links contents font-semibold text-base lg:text-lg">
             <ul className="flex items-center ml-4 xl:ml-8 mr-auto">
@@ -113,8 +124,14 @@ function Navbar() {
                     onClick={() => {
                       navigate(menu?.path)
                       setSelectedMenu(menu?.name)
+                      if (menu?.path?.includes("/contact_me")) {
+                        setContactpath(true)
+                      }
+                      else {
+                        setContactpath(false)
+                      }
                     }}>
-                    <span className="text-black">{t(menu?.name)}</span>
+                    <span className={`${isToggled ? "text-white" : "text-black"}`}>{t(menu?.name)}</span>
                   </button>
                 </li>
               ))}
@@ -129,10 +146,16 @@ function Navbar() {
               onClick={() => {
                 navigate(menu?.path)
                 setSelectedMenu(menu?.name)
+                if (menu?.path?.includes("/contact_me")) {
+                  setContactpath(true)
+                }
+                else {
+                  setContactpath(false)
+                }
               }}
               key={index}
               type="button"
-              className={`p-2.5 bg-[#FF8282] rounded-full me-4 ${selectedMenu == menu?.name ? "focus:outline-none focus:ring-4 focus:ring-[#FF6363]" : ""}`}>
+              className={`p-2.5 bg-[#FF8282] rounded-full me-4 ${selectedMenu == menu?.name ? "outline-none ring-4 ring-[#FF6363]" : ""}`}>
               {menu?.icon}
             </button>
           ))}
@@ -206,10 +229,12 @@ function Navbar() {
               className="sr-only peer"
               type="checkbox"
               checked={isToggled}
-              onChange={() => setToggle(!isToggled)}
+              onChange={() => {
+                setToggle(!isToggled)
+              }}
             />
             <div
-              className="w-16 h-9 rounded-full ring-0 peer duration-500 outline-none bg-gray-200 overflow-hidden before:flex before:items-center before:justify-center after:flex after:items-center after:justify-center before:content-['☀️'] before:absolute before:h-8 before:w-8 before:top-1/2 before:bg-white before:rounded-full before:left-1 before:-translate-y-1/2 before:transition-all before:duration-700 peer-checked:before:opacity-0 peer-checked:before:rotate-90 peer-checked:before:-translate-y-full shadow-sm shadow-gray-400 peer-checked:shadow-sm peer-checked:shadow-gray-700 peer-checked:bg-[#383838] after:content-['🌑'] after:absolute after:bg-[#1d1d1d] after:rounded-full after:top-[4px] after:right-1 after:translate-y-full after:w-8 after:h-8 after:opacity-0 after:transition-all after:duration-700 peer-checked:after:opacity-100 peer-checked:after:rotate-180 peer-checked:after:translate-y-0"
+              className={`w-16 h-9 rounded-full ring-0 peer duration-500 outline-none bg-gray-200 overflow-hidden before:flex before:items-center before:justify-center after:flex after:items-center after:justify-center before:content-['☀️'] before:absolute before:h-8 before:w-8 before:top-1/2 before:bg-white before:rounded-full before:left-1 before:-translate-y-1/2 before:transition-all before:duration-700 peer-checked:before:opacity-0 peer-checked:before:rotate-90 peer-checked:before:-translate-y-full shadow-sm shadow-gray-400 peer-checked:shadow-sm ${isToggled ? "peer-checked:bg-[#526D82]" : " peer-checked:bg-[#383838]"} peer-checked:shadow-gray-700 after:content-['🌑'] after:absolute after:bg-[#1d1d1d] after:rounded-full after:top-[2px] after:right-1 after:translate-y-full after:w-8 after:h-8 after:opacity-0 after:transition-all after:duration-700 peer-checked:after:opacity-100 peer-checked:after:rotate-180 peer-checked:after:translate-y-0`}
             >
             </div>
           </label>

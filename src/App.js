@@ -1,9 +1,10 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 // import "./App.css";
 import AOS from "aos";
 import Navbar from "./Container/Navbar";
 import Loader from "./Container/Loader"
+import MyContext from "./Container/Context";
 
 const Home = lazy(() => import("./Components/Home/Home"));
 const Experience = lazy(() => import("./Components/Experience/Expereince"));
@@ -13,6 +14,10 @@ const Certifications = lazy(() => import("./Components/Certification/Certificati
 
 
 function App() {
+
+  const [contactpath, setContactpath] = useState(false)
+  const [isToggled, setToggle] = useState(false)
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,11 +29,12 @@ function App() {
       window.removeEventListener("scroll", handleScroll);
     }
   }, []);
+
   return (
     <div className="App">
 
       <div className="mod">
-        <div className="cube z-10">
+        <div className={`cube ${contactpath ? "" : "z-10"}`}>
 
           <div className="faces f1">
 
@@ -179,24 +185,26 @@ function App() {
               marginTop: "64px"
             }}
             className="">
-            <BrowserRouter basename={`/`}>
-              <Suspense
-                fallback={
-                  <div className=" flex justify-center">
-                    <Loader />
-                  </div>
-                }
-              >
-                <Navbar />
-                <Routes>
-                  <Route path={`/`} element={<Home />} />
-                  <Route path={`/projects`} element={<Projects />} />
-                  <Route path={`/certifications`} element={<Certifications />} />
-                  <Route path={`/experience`} element={<Experience />} />
-                  <Route path={`/contact_us`} element={<ContactUs />} />
-                </Routes>
-              </Suspense>
-            </BrowserRouter>
+            <MyContext.Provider value={{ isToggled, setToggle }}>
+              <BrowserRouter basename={`/`}>
+                <Suspense
+                  fallback={
+                    <div className=" flex justify-center">
+                      <Loader />
+                    </div>
+                  }
+                >
+                  <Navbar setContactpath={setContactpath} />
+                  <Routes>
+                    <Route path={`/`} element={<Home setContactpath={setContactpath} />} />
+                    <Route path={`/projects`} element={<Projects />} />
+                    <Route path={`/certifications`} element={<Certifications />} />
+                    <Route path={`/experience`} element={<Experience />} />
+                    <Route path={`/contact_me`} element={<ContactUs />} />
+                  </Routes>
+                </Suspense>
+              </BrowserRouter>
+            </MyContext.Provider>
           </div>
         </div>
       </div>

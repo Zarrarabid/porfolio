@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Tilt } from '@jdion/tilt-react'
 import gifImage from "../../Assets/Animation - 1745488964416.gif"
 import { useTranslation } from 'react-i18next';
+import MyContext from '../../Container/Context';
 
 function Expereince() {
+    const {
+        setToggle,
+        isToggled
+    } = useContext(MyContext);
     const { t } = useTranslation();
 
     return (
@@ -12,17 +17,20 @@ function Expereince() {
                 overflow: "hidden"
             }}
         >
-            <main className="relative px-8 py-16 min-h-screen flex flex-col justify-center bg-slate-50 overflow-hidden">
+            <main
+                style={{
+                    backgroundImage: isToggled ? "linear-gradient(135deg, #16213E 0%, #1A1A2E 100%)" : ""
+                }}
+                className={`relative px-8 py-16 min-h-screen flex flex-col justify-center ${isToggled ? "" : "bg-slate-50"} overflow-hidden`}>
                 <div data-aos="zoom-out-up" data-aos-duration="3000" className=' flex justify-center w-full h-full'>
                     <img src={gifImage} />
                 </div>
                 <h1
-                    className="animate-flip-up animate-duration-1000 text-center mt-8 mb-3 text-2xl font-bold text-black md:text-4xl ">
+                    className={`animate-flip-up animate-duration-1000 text-center mt-8 mb-3 text-2xl font-bold ${isToggled ? "text-gray-100" : "text-black"} md:text-4xl `}>
                     {t("Work History")}
                 </h1>
                 <p
-                    // style={{ color: textColor, }}
-                    className=" text-center ">
+                    className={`${isToggled ? "text-gray-100" : "text-black"} text-center`}>
                     {t("In the school of life, practical work is the ultimate curriculum.")}
                 </p>
                 <div className="hidden sm:block w-full max-w-screen-xl px-4 py-8 mx-auto md:px-6 ">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Tilt } from '@jdion/tilt-react'
 import imageprofile from "../../Assets/image-modified.png"
 import reactIcon from "../../Assets/React.png"
@@ -23,10 +23,19 @@ import WMI from "../../Assets/WMI.gif"
 import JSBUFF from "../../Assets/JSBUFF.gif"
 import STACK from "../../Assets/STACK.gif"
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
+import MyContext from '../../Container/Context'
 
 
-function Home() {
+function Home({ setContactpath }) {
+    const {
+        setToggle,
+        isToggled
+    } = useContext(MyContext);
+
+
     const { t } = useTranslation();
+    const navigate = useNavigate()
     const [textColor, setTextColor] = useState('red');
     const icons = [
         { src: HtmlIcon, alt: "HTML icon", animation: "animate-bounce" },
@@ -98,14 +107,14 @@ function Home() {
 
             <section
                 style={{
-                    backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
+                    backgroundImage: isToggled ? "linear-gradient(135deg, #16213E 0%, #1A1A2E 100%)" : "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
                 }}
-                className=" min-h-[100vh] h-full flex flex-col justify-center">
+                className=" min-h-[100vh] h-full flex flex-col justify-center ">
                 <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
 
                     <div className=" mr-auto place-self-center lg:col-span-7">
                         <h1
-                            className="animate-fade-down max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-black">
+                            className={`animate-fade-down max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl ${isToggled ? "text-white" : "text-black"}`}>
                             {t("Hello")},
                         </h1>
                         <h1
@@ -162,18 +171,20 @@ function Home() {
                                 repeat={Infinity}
                             />
                         </h1>
-                        <p className="animate-fade-right animate-duration-[1000ms] max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-800">{t("I am dedicated to crafting exceptional user experiences by leveraging the latest cutting-edge technologies. My focus is on building robust, secure, and accessible websites that are not only interactive but also enjoyable to use. With a strong grasp of back-end technologies, I seamlessly integrate them into my workflow, ensuring a cohesive and efficient development process. My meticulous attention to detail guarantees that every product I deliver aligns perfectly with the design vision, creating a delightful experience for users.")}</p>
+                        <p
+                            className={`animate-fade-right animate-duration-[1000ms] max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl ${isToggled ? "text-gray-100" : "text-gray-800"} `}>
+                            {t("I am dedicated to crafting exceptional user experiences by leveraging the latest cutting-edge technologies. My focus is on building robust, secure, and accessible websites that are not only interactive but also enjoyable to use. With a strong grasp of back-end technologies, I seamlessly integrate them into my workflow, ensuring a cohesive and efficient development process. My meticulous attention to detail guarantees that every product I deliver aligns perfectly with the design vision, creating a delightful experience for users.")}</p>
                         <div className='flex flex-col items-center sm:flex-row'>
                             <a
                                 href="https://zarrarresume.tiiny.site/"
                                 target='blank'
                                 download="Zarrar Resume"
-                                className="animate-flip-up mb-3 relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase text-black rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline-offset-4 overflow-hidden"
+                                className={`animate-flip-up mb-3 relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase ${isToggled ? "text-gray-100" : "text-black"} rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline-offset-4 overflow-hidden`}
                             >
                                 <span className="relative z-20 uppercase">{t("Download Resume")}</span>
 
                                 <span
-                                    className="absolute left-[-75%] top-0 h-full w-[50%] bg-[#00FF9C]/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"
+                                    className={`absolute left-[-75%] top-0 h-full w-[50%] ${isToggled ? "bg-[#FF6363]/20" : "bg-[#00FF9C]/20"} rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out`}
                                 ></span>
 
                                 <span
@@ -191,12 +202,16 @@ function Home() {
                             </a>
 
                             <a
-                                className="mb-3 animate-flip-up font-s relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase text-black rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline focus:outline-2 focus:outline-white focus:outline-offset-4 overflow-hidden"
+                                onClick={() => {
+                                    navigate("/contact_me")
+                                    setContactpath(true)
+                                }}
+                                className={`mb-3 animate-flip-up font-s relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase ${isToggled ? "text-gray-100" : "text-black"} rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline focus:outline-2 focus:outline-white focus:outline-offset-4 overflow-hidden`}
                             >
                                 <span className="relative z-20 uppercase">{t("Send Me a message")}</span>
 
                                 <span
-                                    className="absolute left-[-75%] top-0 h-full w-[50%] bg-[#00FF9C]/20 rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out"
+                                    className={`absolute left-[-75%] top-0 h-full w-[50%] ${isToggled ? "bg-[#FF6363]/20" : "bg-[#00FF9C]/20"} rotate-12 z-10 blur-lg group-hover:left-[125%] transition-all duration-1000 ease-in-out`}
                                 ></span>
 
                                 <span
@@ -339,9 +354,9 @@ function Home() {
 
             <section
                 style={{
-                    backgroundImage: "linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%)"
+                    backgroundImage: isToggled ? "linear-gradient(-225deg, #0F3460 0%, #547792 100%)" : "linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%)"
                 }}
-                className="h-full  py-20">
+                className="h-full  py-20 ">
                 <div className="max-w-screen-xl px-4 py-8 mx-auto ">
                     <div className='w-full flex justify-center'>
                         <div data-aos="zoom-out-up" data-aos-duration="1000" className='h-full w-96 '>
@@ -350,7 +365,7 @@ function Home() {
                     </div>
                     <h1
                         // style={{ color: textColor, }}
-                        className=" text-center my-8 text-2xl font-bold text-black md:text-4xl mb-16">
+                        className={`text-center my-8 text-2xl font-bold ${isToggled ? "text-gray-100" : "text-black"} md:text-4xl mb-16`}>
                         🌟 {t("Technologies I Use")}
                     </h1>
                     <div className='flex flex-wrap gap-20 justify-center'>
@@ -373,19 +388,19 @@ function Home() {
 
             <section
                 style={{
-                    backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
+                    backgroundImage: isToggled ? "linear-gradient(-225deg, #547792 0%, #94B4C1 100%)" : "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
                 }}
-                className='h-full'
+                className='h-full '
             >
                 <div className='px-3 w-full flex flex-col justify-center items-center'>
                     <div data-aos="zoom-out-up" data-aos-duration="1000" className='h-full w-80 sm:w-96 '>
                         <img src={JSBUFF} />
                     </div>
-                    <h2 className="mb-4 text-4xl text-center tracking-tight font-extrabold text-black">{t("You Got It! I am a Javascript Buff")}</h2>
+                    <h2 className={`mb-4 text-4xl text-center tracking-tight font-extrabold ${isToggled ? "text-gray-100" : "text-black"}`}>{t("You Got It! I am a Javascript Buff")}</h2>
                 </div>
                 <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                    <div className="font-light text-gray-800 sm:text-lg ">
-                        <h2 className="mb-4 text-center lg:text-left text-4xl tracking-tight font-extrabold text-black">{t("What is Javascript")}</h2>
+                    <div className={`font-light ${isToggled ? "text-gray-100" : "text-gray-800"} sm:text-lg`}>
+                        <h2 className={`mb-4 text-center lg:text-left text-4xl tracking-tight font-extrabold ${isToggled ? "text-gray-100" : "text-black"}`}>{t("What is Javascript")}</h2>
                         <p className="mb-4">{t("JavaScript, or JS, is the dynamic force behind most websites, bringing interactivity and flair to the web. With over 97% of sites harnessing its power, it’s essential for creating engaging user experiences—from animations to responsive applications. Unleash your creativity with JS!")}</p>
                     </div>
                     <div className="grid grid-cols-2 gap-4 mt-8">
@@ -398,9 +413,9 @@ function Home() {
 
             <section
                 style={{
-                    backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
+                    backgroundImage: isToggled ? "linear-gradient(135deg, #213448 0%, #547792 100%)" : "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
                 }}
-                className='h-full pt-20 pb-32'
+                className='h-full pt-20 pb-32 '
             >
 
                 <div className='px-4 flex flex-col justify-center items-center'>
@@ -408,7 +423,7 @@ function Home() {
                         <img src={WMI} />
                     </div>
                     <h1
-                        className=" text-center my-8 text-2xl font-bold text-black md:text-4xl mb-16">
+                        className={`text-center my-8 text-2xl font-bold ${isToggled ? "text-gray-100" : "text-black"} md:text-4xl mb-16`}>
                         🕵️‍♂️ {t("Who is Zarrar Abid?")}
                     </h1>
                     <Tilt>
@@ -445,9 +460,9 @@ function Home() {
 
             <section
                 style={{
-                    backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
+                    backgroundImage: isToggled ? "linear-gradient(135deg, #344659 0%, #48586a 100%)" : "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)"
                 }}
-                className="text-black bg-white">
+                className={``}>
                 <div className="max-w-6xl mx-auto px-5 py-24 ">
                     <div className='w-full flex justify-center mb-10'>
                         <div data-aos="zoom-out-up" data-aos-duration="1000" className='h-full w-96 '>
@@ -455,10 +470,10 @@ function Home() {
                         </div>
                     </div>
                     <div className="text-center mb-20">
-                        <h1 className=" title-font  mb-4 text-2xl md:text-4xl font-extrabold leading-10 tracking-tight sm:text-5xl sm:leading-none ">
+                        <h1 className={`${isToggled ? "text-gray-100" : "text-black"} title-font  mb-4 text-2xl md:text-4xl font-extrabold leading-10 tracking-tight sm:text-5xl sm:leading-none`}>
                             💻 {t("A Glimpse into My Toolkit")}
                         </h1>
-                        <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+                        <p className={`${isToggled ? "text-gray-100" : "text-black"} text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto`}>
                             {t("In this section, I’ll share the powerful tools and technologies that fuel my development journey. From frameworks to databases, each component is carefully chosen to enhance productivity and creativity. Get ready to explore the building blocks of my projects!")}
                         </p>
                         <div className="flex mt-6 justify-center">
