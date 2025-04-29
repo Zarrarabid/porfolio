@@ -14,14 +14,12 @@ function Expereince() {
     return (
         <div
             style={{
-                overflow: "hidden"
+                overflow: "hidden",
+                backgroundImage: isToggled ? "linear-gradient(135deg, #16213E 0%, #1A1A2E 100%)" : ""
             }}
         >
             <main
-                style={{
-                    backgroundImage: isToggled ? "linear-gradient(135deg, #16213E 0%, #1A1A2E 100%)" : ""
-                }}
-                className={`relative px-8 py-16 min-h-screen flex flex-col justify-center ${isToggled ? "" : "bg-slate-50"} overflow-hidden`}>
+                className={`relative px-8 pt-16 pb-0 sm:pt-16 sm:pb-16  min-h-screen flex flex-col justify-center ${isToggled ? "" : "bg-slate-50"} overflow-hidden`}>
                 <div data-aos="zoom-out-up" data-aos-duration="3000" className=' flex justify-center w-full h-full'>
                     <img src={gifImage} />
                 </div>

@@ -14,10 +14,15 @@ function ContactUs() {
         message: ""
     })
     return (
-        <>
+        <div
+            style={{
+                overflow: "hidden",
+                backgroundImage: isToggled ? "linear-gradient(135deg, #16213E 0%, #1A1A2E 100%)" : ""
+            }}
+            className='h-full flex flex-col items-center justify-center'>
             <div
-                className="h-96 z-50 my-36 flex items-center justify-center">
-                <div className="relative">
+                className="z-50 flex flex-col items-center justify-center">
+                <div className="relative my-36">
                     <div className="absolute -top-2 -left-2 -right-2 -bottom-2 rounded-lg bg-gradient-to-r from-gray-500 via-blue-600 to-black shadow-lg animate-pulse"></div>
                     <div className="relative bg-white p-10 rounded-lg shadow-lg">
                         <div className="flex flex-wrap justify-center gap-5 items-center w-full max-md:max-w-full mb-10">
@@ -132,7 +137,7 @@ function ContactUs() {
 
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

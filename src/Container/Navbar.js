@@ -180,7 +180,7 @@ function Navbar({ setContactpath }) {
             </button>
             <div
               id="moreOptionsDropdown"
-              className={`w-[173px] z-10 ${toggleMenu ? 'absolute top-12 right-5' : 'hidden'} ring-1 ring-[#FF6363] bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 `}
+              className={`w-[173px] z-10 ${toggleMenu ? 'absolute top-12 right-5' : 'hidden'} ring-1 ring-[#FF6363] ${isToggled ? "bg-[#1A1A2E]" : "bg-white"} divide-y divide-gray-100 rounded-lg shadow-sm w-44 `}
             >
               <ul className="py-0 text-sm">
                 <li className="px-2.5 flex justify-center">
@@ -199,10 +199,12 @@ function Navbar({ setContactpath }) {
                       className="sr-only peer"
                       type="checkbox"
                       checked={isToggled}
-                      onChange={() => setToggle(!isToggled)}
+                      onChange={() => {
+                        setToggle(!isToggled)
+                      }}
                     />
                     <div
-                      className="w-16 h-9 rounded-full ring-0 peer duration-500 outline-none bg-gray-200 overflow-hidden before:flex before:items-center before:justify-center after:flex after:items-center after:justify-center before:content-['☀️'] before:absolute before:h-8 before:w-8 before:top-1/2 before:bg-white before:rounded-full before:left-1 before:-translate-y-1/2 before:transition-all before:duration-700 peer-checked:before:opacity-0 peer-checked:before:rotate-90 peer-checked:before:-translate-y-full shadow-sm shadow-gray-400 peer-checked:shadow-sm peer-checked:shadow-gray-700 peer-checked:bg-[#383838] after:content-['🌑'] after:absolute after:bg-[#1d1d1d] after:rounded-full after:top-[4px] after:right-1 after:translate-y-full after:w-8 after:h-8 after:opacity-0 after:transition-all after:duration-700 peer-checked:after:opacity-100 peer-checked:after:rotate-180 peer-checked:after:translate-y-0"
+                      className={`w-16 h-9 rounded-full ring-0 peer duration-500 outline-none bg-gray-200 overflow-hidden before:flex before:items-center before:justify-center after:flex after:items-center after:justify-center before:content-['☀️'] before:absolute before:h-8 before:w-8 before:top-1/2 before:bg-white before:rounded-full before:left-1 before:-translate-y-1/2 before:transition-all before:duration-700 peer-checked:before:opacity-0 peer-checked:before:rotate-90 peer-checked:before:-translate-y-full shadow-sm shadow-gray-400 peer-checked:shadow-sm ${isToggled ? "peer-checked:bg-[#526D82]" : " peer-checked:bg-[#383838]"} peer-checked:shadow-gray-700 after:content-['🌑'] after:absolute after:bg-[#1d1d1d] after:rounded-full after:top-[12px] after:right-1 after:translate-y-full after:w-8 after:h-8 after:opacity-0 after:transition-all after:duration-700 peer-checked:after:opacity-100 peer-checked:after:rotate-180 peer-checked:after:translate-y-0`}
                     >
                     </div>
                   </label>
