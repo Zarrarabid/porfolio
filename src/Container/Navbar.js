@@ -1,16 +1,14 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { useTranslation } from "react-i18next";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MyContext from "./Context";
 
 
-function Navbar({ setContactpath }) {
-  const {
-    pathname
-  } = useLocation()
+function Navbar() {
   const {
     setToggle,
-    isToggled
+    isToggled,
+    setContactpath
   } = useContext(MyContext);
   const { t, i18n } = useTranslation();
   const [languageIs, setLanguageIs] = useState(sessionStorage?.getItem("userLanguage") || "en")
@@ -28,23 +26,23 @@ function Navbar({ setContactpath }) {
 
 
   useEffect(() => {
-    if (pathname == "/projects") {
+    if (window?.location?.href?.includes("projects")) {
       setSelectedMenu("Projects")
     }
-    else if (pathname?.includes("experience")) {
+    else if (window?.location?.href?.includes("experience")) {
       setSelectedMenu("Experience")
     }
-    else if (pathname?.includes("certifications")) {
-      setSelectedMenu("Certifications")
+    else if (window?.location?.href?.includes("certifications")) {
+      setSelectedMenu("Certification")
     }
-    else if (pathname?.includes("contact_me")) {
+    else if (window?.location?.href?.includes("contact_me")) {
       setSelectedMenu("Contact Me")
     }
     else {
       setSelectedMenu("Home")
     }
 
-  }, [])
+  }, [window.location.href])
 
 
 
@@ -112,7 +110,7 @@ function Navbar({ setContactpath }) {
         style={{
           border: "none",
         }}
-        className={` fixed top-0 left-0 z-50 grid w-full h-16 grid-cols-1 px-8 ${isToggled ? "bg-[#1A1A2E] shadow-white/15" : "bg-white"} border-t border-gray-200 md:grid-cols-2 shadow backdrop-filter backdrop-blur-sm bg-opacity-10"`}>
+        className={` sticky top-0 left-0 z-50 grid w-full h-16 grid-cols-1 px-8 ${isToggled ? "bg-[#1A1A2E] shadow-white/15" : "bg-white"} border-t border-gray-200 md:grid-cols-2 shadow backdrop-filter backdrop-blur-sm bg-opacity-10"`}>
         <div className="items-center justify-center hidden text-gray-500 dark:text-gray-400 me-auto md:flex">
           <nav className="header-links contents font-semibold text-base lg:text-lg">
             <ul className="flex items-center ml-4 xl:ml-8 mr-auto">

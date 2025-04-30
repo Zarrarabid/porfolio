@@ -5,6 +5,7 @@ import AOS from "aos";
 import Navbar from "./Container/Navbar";
 import Loader from "./Container/Loader"
 import MyContext from "./Container/Context";
+import Footer from "./Container/Footer";
 
 const Home = lazy(() => import("./Components/Home/Home"));
 const Experience = lazy(() => import("./Components/Experience/Expereince"));
@@ -181,11 +182,11 @@ function App() {
 
         <div >
           <div
-            style={{
-              marginTop: "64px"
-            }}
+            // style={{
+            //   marginTop: "64px"
+            // }}
             className="">
-            <MyContext.Provider value={{ isToggled, setToggle }}>
+            <MyContext.Provider value={{ isToggled, setToggle, setContactpath }}>
               <BrowserRouter basename={`/`}>
                 <Suspense
                   fallback={
@@ -194,7 +195,7 @@ function App() {
                     </div>
                   }
                 >
-                  <Navbar setContactpath={setContactpath} />
+                  <Navbar />
                   <Routes>
                     <Route path={`/`} element={<Home setContactpath={setContactpath} />} />
                     <Route path={`/projects`} element={<Projects />} />
@@ -202,6 +203,7 @@ function App() {
                     <Route path={`/experience`} element={<Experience />} />
                     <Route path={`/contact_me`} element={<ContactUs />} />
                   </Routes>
+                  <Footer />
                 </Suspense>
               </BrowserRouter>
             </MyContext.Provider>

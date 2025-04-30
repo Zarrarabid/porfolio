@@ -154,7 +154,7 @@ function Expereince() {
                 </div>
 
             </main>
-            <div className="px-2 sm:hidden flex flex-col justify-center align-middle gap-10">
+            <div className="px-2 mb-8 sm:hidden flex flex-col justify-center align-middle gap-10">
                 <Tilt>
                     <div
                         data-aos="zoom-out-left"
