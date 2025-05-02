@@ -4,6 +4,6 @@ Welcome to my portfolio website! This site showcases my projects, skills, and ex
 
 ## Live Demo
 
-You can view my portfolio at: [zarrar-portfolio-vercel.app](https://zarrar-portfolio-vercel.app)
+You can view my portfolio at: [zarrar-portfolio-vercel.app](https://zarrar-porfolio.vercel.app/)
 
 Thank you for visiting my portfolio!
