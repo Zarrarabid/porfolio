@@ -47,6 +47,18 @@ function Projects() {
             des: "This project is a multi-restaurant food ordering website, similar to Glovo, where users can browse and purchase meals from various restaurants all in one place.",
             link: "https://v50-tier2-team-11-three.vercel.app/"
         },
+        {
+            coverImg: "https://static.vecteezy.com/system/resources/previews/005/231/368/non_2x/an-admin-panel-icon-flat-editable-vector.jpg",
+            name: "Admin Panel",
+            des: "This project is an admin panel for a car parts platform, where admins can manage Users, products, and excel uploader.",
+            link: "https://admin-panel-frontend-lake.vercel.app/login"
+        },
+        {
+            coverImg: "https://www.shutterstock.com/image-vector/man-riding-red-scooter-delivery-600nw-1701243736.jpg",
+            name: "Houria Delivery",
+            des: "Houria Delivery W.L.L. Qatar Services provides Reliable bike & car riders for delivery companies and riders jobs in Qatar.",
+            link: "https://houria-delivery.vercel.app/"
+        },
     ]
     return (
         <div

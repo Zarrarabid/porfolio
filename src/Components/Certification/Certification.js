@@ -32,10 +32,51 @@ function Certification() {
             link: "https://www.udemy.com/certificate/UC-f04b2a26-d5e9-4b68-bd00-779c1f77e984/"
         },
         {
+            coverImg: "https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.udemy.android.jpg",
+            name: "MongoDB - The Complete MongoDB Developers Course",
+            link: "https://www.udemy.com/certificate/UC-68582857-b838-4ad1-aafb-8a6841c443ac/"
+        },
+        {
+            coverImg: "https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.udemy.android.jpg",
+            name: "The Ultimate Microsoft Word: Essential Comprehensive Guide",
+            link: "https://www.udemy.com/certificate/UC-5de5863e-d4ac-42d3-9bd9-7b7b1e7b9e78/"
+        },
+        {
+            coverImg: "https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.udemy.android.jpg",
+            name: "Complete Graphics Design Bootcamp Beginner to Advanced",
+            link: "https://www.udemy.com/certificate/UC-eb7cc155-37a6-4ecc-8bf4-0954316b96de/"
+        },
+        {
+            coverImg: "https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.udemy.android.jpg",
+            name: "Excel Data Analysis: Build Professional Dashboards & Reports",
+            link: "https://www.udemy.com/certificate/UC-1d80cb60-a5ef-4085-9750-66930e5b2e6c/"
+        },
+        {
+            coverImg: "https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.udemy.android.jpg",
+            name: "The Complete Full-Stack Web Development Bootcamp",
+            link: "https://www.udemy.com/certificate/UC-5be87dad-e3a7-4c6d-b55c-6b159d50e8da/"
+        },
+        {
+            coverImg: "https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.udemy.android.jpg",
+            name: "Professional Certificate in Customer Experience Management",
+            link: "https://www.udemy.com/certificate/UC-19e1d18c-7e3f-4ade-b8a0-a2273f3954a3/"
+        },
+        {
             coverImg: "https://devopscube.com/content/images/2025/03/coursera-1-1.png",
             name: "Build a full Stack App using React and Express",
             link: "https://www.coursera.org/account/accomplishments/verify/CLSMENVDASNG?utm_source=mobile&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course"
         },
+        {
+            coverImg: "https://www.computer.org/_next/image?url=https%3A%2F%2Fmain-cdn.computer.org%2Fwp-content%2Fuploads%2F2022%2F06%2FAPI-Developer-Community.jpg&w=256&q=75",
+            name: "Six-week Voyage team project",
+            link: "https://chingu-voyage-50.tiiny.site/"
+        },
+        {
+            coverImg: "https://fs.buttercms.com/resize=width:885/6LpYh7uTDedRomZNmh5R",
+            name: "Number Formatter JS",
+            link: "https://www.npmjs.com/package/numberformatterwithcommas"
+        },
+        
 
     ]
     return (

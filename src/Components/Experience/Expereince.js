@@ -58,7 +58,7 @@ function Expereince() {
                                                             <div className="w-full">
                                                                 <div className="flex items-center justify-between space-x-2 mb-1">
                                                                     <div className="font-bold text-slate-900">DCCL | Islamabad, Pakistan</div>
-                                                                    <time className="font-caveat font-medium text-indigo-500">SEP-2023 - PRESENT</time>
+                                                                    <time className="font-caveat font-medium text-indigo-500">SEP-2023 - OCT-2025</time>
                                                                 </div>
                                                                 <div className="text-slate-500">
                                                                     ♦ {t("Developed and maintained advanced ReactJS applications tailored for various industries, particularly focusing on the finance sector.")}<br></br>
