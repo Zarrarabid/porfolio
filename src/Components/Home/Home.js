@@ -176,7 +176,8 @@ function Home({ setContactpath }) {
                             {t("I am dedicated to crafting exceptional user experiences by leveraging the latest cutting-edge technologies. My focus is on building robust, secure, and accessible websites that are not only interactive but also enjoyable to use. With a strong grasp of back-end technologies, I seamlessly integrate them into my workflow, ensuring a cohesive and efficient development process. My meticulous attention to detail guarantees that every product I deliver aligns perfectly with the design vision, creating a delightful experience for users.")}</p>
                         <div className='flex flex-col items-center sm:flex-row'>
                             <a
-                                href="https://zarrarresume.tiiny.site/"
+                                // href="https://zarrarresume.tiiny.site/"
+                                href="https://zarrar-abid-resume.tiiny.site/" //iqra gmail account ma ha
                                 target='blank'
                                 download="Zarrar Resume"
                                 className={`animate-flip-up mb-3 relative mr-3 cursor-pointer py-3 px-8 text-center font-barlow inline-flex justify-center uppercase ${isToggled ? "text-gray-100" : "text-black"} rounded-lg border-solid transition-transform duration-300 ease-in-out group outline-offset-4 focus:outline-offset-4 overflow-hidden`}
@@ -444,7 +445,7 @@ function Home({ setContactpath }) {
                                     <pre className="sm:text-2xl  my-5 text-sm ">
                                         {`{
   "name": "Zarrar Abid",
-  "age": "25",
+  "age": "26",
   "gender": "male",
   "country": "PAKISTAN"
 }`
